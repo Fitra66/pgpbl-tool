@@ -1,0 +1,8 @@
+{
+  "name": "pgpbl_tool",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular",
+  "id": "bb638330"
+}
