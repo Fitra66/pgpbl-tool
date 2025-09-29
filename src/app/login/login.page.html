@@ -1,0 +1,91 @@
+<ion-content [fullscreen]="true" class="auth">
+  <!-- Dekorasi background -->
+  <div class="bg-decor"></div>
+  <div class="login">
+    <ion-card class="auth-card">
+      <ion-card-header class="text-center">
+        <div class="logo-wrap">
+          <ion-icon name="shield-checkmark-outline" class="logo-icon"></ion-icon>
+        </div>
+        <ion-card-title>Selamat Datang</ion-card-title>
+        <ion-card-subtitle>Masuk untuk melanjutkan</ion-card-subtitle>
+      </ion-card-header>
+
+      <ion-card-content>
+        <ion-list lines="full" class="form-list">
+          <!-- EMAIL -->
+          <ion-item class="field">
+            <ion-icon slot="start" name="mail-outline"></ion-icon>
+            <ion-input
+              type="email"
+              label="Email"
+              labelPlacement="floating"
+              placeholder="Masukkan email"
+              [(ngModel)]="email"
+              name="email"
+              autocomplete="email"
+              inputmode="email"
+              (keydown.enter)="login()"
+              clearInput>
+            </ion-input>
+          </ion-item>
+          <ion-note *ngIf="showErrors && !email" color="danger" class="note">
+            Email harus diisi
+          </ion-note>
+
+          <!-- PASSWORD -->
+          <ion-item class="field">
+            <ion-icon slot="start" name="lock-closed-outline"></ion-icon>
+            <ion-input
+              type="password"
+              label="Kata Sandi"
+              labelPlacement="floating"
+              placeholder="Masukkan kata sandi"
+              [(ngModel)]="password"
+              name="password"
+              autocomplete="current-password"
+              (keydown.enter)="login()">
+              <ion-input-password-toggle slot="end"></ion-input-password-toggle>
+            </ion-input>
+          </ion-item>
+          <ion-note *ngIf="showErrors && !password" color="danger" class="note">
+            Kata sandi harus diisi
+          </ion-note>
+        </ion-list>
+
+        <!-- Actions -->
+        <div class="row actions">
+          <ion-checkbox [(ngModel)]="rememberMe" justify="start" labelPlacement="end">
+            Ingat saya
+          </ion-checkbox>
+          <ion-button fill="clear" size="small">Lupa kata sandi?</ion-button>
+        </div>
+
+        <ion-button
+          class="btn-primary"
+          expand="block"
+          size="large"
+          [disabled]="!email || !password || isLoading"
+          (click)="login()">
+          <ion-spinner *ngIf="isLoading" name="crescent" class="mr-2"></ion-spinner>
+          <span *ngIf="!isLoading">Masuk</span>
+          <span *ngIf="isLoading">Sedang masuk…</span>
+        </ion-button>
+
+        <div class="row signup">
+          <span>Pengguna baru?</span>
+            <ion-button fill="clear" size="small" (click)="goToRegister()">Buat akun</ion-button>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+  <!-- Toast feedback -->
+  <ion-toast
+    [isOpen]="toastOpen"
+    [message]="toastMessage"
+    [duration]="2000"
+    position="top"
+    (didDismiss)="toastOpen=false">
+  </ion-toast>
+</ion-content>

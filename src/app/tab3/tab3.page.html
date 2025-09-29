@@ -1,4 +1,4 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
     <ion-title>
       Tab 3
@@ -6,12 +6,225 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="ion-padding">
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+  <h2>Badge Components</h2>
+  <ion-item>
+    <ion-badge slot="start" color="primary">11</ion-badge>
+    <ion-label>Badge in start slot</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-label>Badge in end slot</ion-label>
+    <ion-badge slot="end" color="primary">22</ion-badge>
+  </ion-item>
+
+  <h2 class="ion-margin-top">Breadcrumbs Components</h2>
+  <ion-breadcrumbs>
+    <ion-breadcrumb href="#">Home</ion-breadcrumb>
+    <ion-breadcrumb href="#">Electronics</ion-breadcrumb>
+    <ion-breadcrumb href="#">Cameras</ion-breadcrumb>
+    <ion-breadcrumb>Film</ion-breadcrumb>
+  </ion-breadcrumbs>
+
+  <h2 class="ion-margin-top">Button Components</h2>
+
+  <div>
+    <ion-button color="primary">DEFAULT</ion-button>
+    <ion-button color="primary">PRIMARY</ion-button>
+    <ion-button color="secondary">SECONDARY</ion-button>
+  </div>
+  <div>
+    <ion-button color="tertiary">TERTIARY</ion-button>
+    <ion-button color="success">SUCCESS</ion-button>
+    <ion-button color="warning">WARNING</ion-button>
+  </div>
+  <div>
+    <ion-button color="danger">DANGER</ion-button>
+    <ion-button color="light">LIGHT</ion-button>
+    <ion-button color="medium">MEDIUM</ion-button>
+    <ion-button color="dark">DARK</ion-button>
+  </div>
+
+  <div class="ion-margin-top">
+    <ion-button color="primary" fill="solid">DEFAULT</ion-button>
+    <ion-button color="primary" fill="clear">CLEAR</ion-button>
+    <ion-button color="primary" fill="outline">OUTLINE</ion-button>
+    <ion-button color="primary" fill="solid">SOLID</ion-button>
+  </div>
+
+</ion-content>
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>
+      Contoh Komponen Ionic
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <h2>Badges, Breadcrumbs, Buttons</h2>
+
+  <ion-item>
+    <ion-badge slot="start" color="primary">11</ion-badge>
+    <ion-label>Badge in start slot</ion-label>
+  </ion-item>
+
+  <ion-breadcrumbs class="ion-margin-top">
+    <ion-breadcrumb href="#">Home</ion-breadcrumb>
+    <ion-breadcrumb>UI</ion-breadcrumb>
+  </ion-breadcrumbs>
+
+  <div class="ion-margin-top">
+    <ion-button color="primary">Primary</ion-button>
+    <ion-button color="secondary" fill="outline">Secondary</ion-button>
+    <ion-button color="danger" fill="clear">Danger</ion-button>
+  </div>
+
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+    <ion-fab-button>
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <ion-item-divider></ion-item-divider>
+
+  <h2 class="ion-margin-top">Card</h2>
+  <ion-card>
+    <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />
+    <ion-card-header>
+      <ion-card-title>Card Title</ion-card-title>
+      <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      Here's a small text description for the card's content. Nothing more, nothing less.
+    </ion-card-content>
+  </ion-card>
+
+  <ion-item-divider></ion-item-divider>
+
+  <h2 class="ion-margin-top">Form Components</h2>
+
+  <h3>Checkbox</h3>
+  <ion-item>
+    <ion-checkbox slot="start"></ion-checkbox>
+    <ion-label>Setuju dengan syarat & ketentuan</ion-label>
+  </ion-item>
+
+  <h3>Date & Time Picker</h3>
+  <ion-item>
+    <ion-label>Tanggal Lahir</ion-label>
+    <ion-datetime-button datetime="datetime"></ion-datetime-button>
+    <ion-modal [keepContentsMounted]="true">
+      <ng-template>
+        <ion-datetime id="datetime"></ion-datetime>
+      </ng-template>
+    </ion-modal>
+  </ion-item>
+
+  <h3>Input</h3>
+  <ion-input label="Solid input" label-placement="floating" fill="solid" placeholder="Masukkan nama"></ion-input>
+  <br>
+  <ion-input label="Outline input" label-placement="floating" fill="outline" placeholder="Masukkan email"></ion-input>
+
+  <h3>Radio Group</h3>
+  <ion-radio-group value="b">
+    <ion-item>
+      <ion-radio value="a" slot="start"></ion-radio>
+      <ion-label>Pilihan A</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-radio value="b" slot="start"></ion-radio>
+      <ion-label>Pilihan B</ion-label>
+    </ion-item>
+  </ion-radio-group>
+
+  <h3>Range (Slider)</h3>
+  <ion-range label-placement="start" [pin]="true">
+    <ion-icon name="volume-low" slot="start"></ion-icon>
+    <div slot="label">Volume</div>
+    <ion-icon name="volume-high" slot="end"></ion-icon>
+  </ion-range>
+
+  <h3>Select (Dropdown)</h3>
+  <ion-item>
+    <ion-select label="Pilih Buah" placeholder="Favorit">
+      <ion-select-option value="apel">Apel</ion-select-option>
+      <ion-select-option value="mangga">Mangga</ion-select-option>
+      <ion-select-option value="jeruk">Jeruk</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <h3>Toggle</h3>
+  <ion-item>
+    <ion-toggle slot="start"></ion-toggle>
+    <ion-label>Aktifkan Notifikasi</ion-label>
+  </ion-item>
+
+  <ion-item-divider></ion-item-divider>
+
+  <h2 class="ion-margin-top">List</h2>
+  <ion-list>
+    <ion-item-sliding>
+      <ion-item>
+        <ion-label>
+          <h3>Geser ke kiri untuk opsi</h3>
+          <p>Ini adalah item dalam daftar</p>
+        </ion-label>
+      </ion-item>
+      <ion-item-options side="end">
+        <ion-item-option color="success">Arsip</ion-item-option>
+        <ion-item-option color="danger" expandable>Hapus</ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+    <ion-item>
+      <ion-thumbnail slot="start">
+        <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+      </ion-thumbnail>
+      <ion-label>
+        <h3>Item dengan Avatar</h3>
+        <p>Deskripsi singkat di sini...</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ion-item-divider></ion-item-divider>
+
+  <h2 class="ion-margin-top">Indicators & Others</h2>
+
+  <h3>Chip</h3>
+  <div>
+    <ion-chip>Default</ion-chip>
+    <ion-chip color="secondary">
+      <ion-icon name="pin"></ion-icon>
+      <ion-label>Lokasi</ion-label>
+    </ion-chip>
+  </div>
+
+  <h3>Progress Bar</h3>
+  <ion-progress-bar value="0.5" color="success"></ion-progress-bar>
+
+  <h3>Searchbar</h3>
+  <ion-searchbar placeholder="Cari sesuatu..."></ion-searchbar>
+
+  <h3>Segment</h3>
+  <ion-segment value="home">
+    <ion-segment-button value="home">
+      <ion-label>Home</ion-label>
+      <ion-icon name="home"></ion-icon>
+    </ion-segment-button>
+    <ion-segment-button value="favorites">
+      <ion-label>Favorites</ion-label>
+      <ion-icon name="heart"></ion-icon>
+    </ion-segment-button>
+  </ion-segment>
+
+  <h2 class="ion-margin-top">Interactive Components</h2>
+  <p>Komponen di bawah ini memerlukan kode TypeScript untuk menampilkannya.</p>
+
+  <ion-button expand="block" id="open-alert">Tampilkan Alert</ion-button>
+  <ion-button expand="block" id="open-action-sheet">Tampilkan Action Sheet</ion-button>
+  <ion-button expand="block" id="open-toast">Tampilkan Toast</ion-button>
+  <ion-button expand="block" id="open-modal">Buka Modal</ion-button>
+
 </ion-content>

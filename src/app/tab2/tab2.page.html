@@ -1,17 +1,124 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 2
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-accordion-group expand="inset" [multiple]="true">
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+    <!-- Senin -->
+    <ion-accordion value="senin">
+      <ion-item slot="header" color="light" lines="none">
+        <ion-icon name="sparkles-outline" slot="start"></ion-icon>
+        <ion-label>Senin</ion-label>
+        <ion-icon name="chevron-down-outline" slot="end"></ion-icon>
+      </ion-item>
+      <div slot="content">
+        <ion-item>
+          <ion-label>
+            <h1>H1 Heading</h1>
+            <p>Paragraph</p>
+          </ion-label>
+        </ion-item>
+      </div>
+    </ion-accordion>
+
+    <!-- Selasa -->
+    <ion-accordion value="selasa">
+      <ion-item slot="header" color="light" lines="none">
+        <ion-icon name="flash-outline" slot="start"></ion-icon>
+        <ion-label>Selasa</ion-label>
+        <ion-icon name="chevron-down-outline" slot="end"></ion-icon>
+      </ion-item>
+      <div slot="content">
+        <ion-item>
+          <ion-label>
+            <h1>H1 Heading</h1>
+            <p>Paragraph</p>
+          </ion-label>
+        </ion-item>
+      </div>
+    </ion-accordion>
+
+    <!-- Rabu -->
+    <ion-accordion value="rabu">
+      <ion-item slot="header" color="light" lines="none">
+        <ion-icon name="planet-outline" slot="start"></ion-icon>
+        <ion-label>Rabu</ion-label>
+        <ion-icon name="chevron-down-outline" slot="end"></ion-icon>
+      </ion-item>
+      <div slot="content">
+        <ion-item>
+          <ion-label>
+            <h1>H1 Heading</h1>
+            <p>Paragraph</p>
+          </ion-label>
+        </ion-item>
+      </div>
+    </ion-accordion>
+
+    <!-- Kamis -->
+    <ion-accordion value="kamis">
+      <ion-item slot="header" color="light" lines="none">
+        <ion-icon name="leaf-outline" slot="start"></ion-icon>
+        <ion-label>Kamis</ion-label>
+        <ion-icon name="chevron-down-outline" slot="end"></ion-icon>
+      </ion-item>
+      <div slot="content">
+        <ion-item>
+          <ion-label>
+            <h1>H1 Heading</h1>
+            <p>Paragraph</p>
+          </ion-label>
+        </ion-item>
+      </div>
+    </ion-accordion>
+
+    <!-- Jumat -->
+    <ion-accordion value="jumat">
+      <ion-item slot="header" color="light" lines="none">
+        <ion-icon name="trophy-outline" slot="start"></ion-icon>
+        <ion-label>Jumat</ion-label>
+        <ion-icon name="chevron-down-outline" slot="end"></ion-icon>
+      </ion-item>
+      <div slot="content">
+        <ion-item>
+          <ion-label>
+            <h1>H1 Heading</h1>
+            <p>Paragraph</p>
+          </ion-label>
+        </ion-item>
+      </div>
+    </ion-accordion>
+
+    <!-- Sabtu -->
+    <ion-accordion value="sabtu">
+      <ion-item slot="header" color="light" lines="none">
+        <ion-icon name="beer-outline" slot="start"></ion-icon>
+        <ion-label>Sabtu</ion-label>
+        <ion-icon name="chevron-down-outline" slot="end"></ion-icon>
+      </ion-item>
+      <div slot="content">
+        <ion-item>
+          <ion-label>
+            <h1>H1 Heading</h1>
+            <p>Paragraph</p>
+          </ion-label>
+        </ion-item>
+      </div>
+    </ion-accordion>
+
+    <!-- Minggu -->
+    <ion-accordion value="minggu">
+      <ion-item slot="header" color="light" lines="none">
+        <ion-icon name="sunny-outline" slot="start"></ion-icon>
+        <ion-label>Minggu</ion-label>
+        <ion-icon name="chevron-down-outline" slot="end"></ion-icon>
+      </ion-item>
+      <div slot="content">
+        <ion-item>
+          <ion-label>
+            <h1>H1 Heading</h1>
+            <p>Paragraph</p>
+          </ion-label>
+        </ion-item>
+      </div>
+    </ion-accordion>
+
+  </ion-accordion-group>
 </ion-content>

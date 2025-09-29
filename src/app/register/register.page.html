@@ -1,0 +1,103 @@
+<ion-content [fullscreen]="true" class="auth">
+  <!-- Dekorasi background -->
+  <div class="bg-decor"></div>
+  <div class="login">
+    <ion-card class="auth-card">
+      <ion-card-header class="text-center">
+        <div class="logo-wrap">
+          <ion-icon name="shield-checkmark-outline" class="logo-icon"></ion-icon>
+        </div>
+        <ion-card-title>Buat Akun</ion-card-title>
+        <ion-card-subtitle>Daftar untuk melanjutkan</ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-list lines="full" class="form-list">
+          <!-- EMAIL -->
+          <ion-item class="field">
+            <ion-icon slot="start" name="mail-outline"></ion-icon>
+            <ion-input
+              type="email"
+              label="Email"
+              labelPlacement="floating"
+              placeholder="Masukkan email"
+              [(ngModel)]="email"
+              name="email"
+              autocomplete="email"
+              inputmode="email"
+              (keydown.enter)="register()"
+              clearInput>
+            </ion-input>
+          </ion-item>
+          <ion-note *ngIf="showErrors && !email" color="danger" class="note">
+            Email harus diisi
+          </ion-note>
+          <!-- PASSWORD -->
+          <ion-item class="field">
+            <ion-icon slot="start" name="lock-closed-outline"></ion-icon>
+            <ion-input
+              type="password"
+              label="Kata Sandi"
+              labelPlacement="floating"
+              placeholder="Masukkan kata sandi"
+              [(ngModel)]="password"
+              name="password"
+              autocomplete="new-password"
+              (keydown.enter)="register()">
+              <ion-input-password-toggle slot="end"></ion-input-password-toggle>
+            </ion-input>
+          </ion-item>
+          <ion-note *ngIf="showErrors && !password" color="danger" class="note">
+            Kata sandi harus diisi
+          </ion-note>
+          <!-- CONFIRM PASSWORD -->
+          <ion-item class="field">
+            <ion-icon slot="start" name="lock-closed-outline"></ion-icon>
+            <ion-input
+              type="password"
+              label="Konfirmasi Kata Sandi"
+              labelPlacement="floating"
+              placeholder="Masukkan kata sandi lagi"
+              [(ngModel)]="confirmPassword"
+              name="confirmPassword"
+              autocomplete="new-password"
+              (keydown.enter)="register()">
+              <ion-input-password-toggle slot="end"></ion-input-password-toggle>
+            </ion-input>
+          </ion-item>
+          <ion-note *ngIf="showErrors && !confirmPassword" color="danger" class="note">
+            Konfirmasi kata sandi harus diisi
+          </ion-note>
+          <ion-note *ngIf="showErrors && password && confirmPassword && password !== confirmPassword" color="danger" class="note">
+            Kata sandi tidak cocok
+          </ion-note>
+        </ion-list>
+        <!-- Actions -->
+        <div class="row actions">
+          <ion-button fill="clear" size="small" (click)="cancel()">Batal</ion-button>
+        </div>
+        <ion-button
+          class="btn-primary"
+          expand="block"
+          size="large"
+          [disabled]="!email || !password || !confirmPassword || password !== confirmPassword || isLoading"
+          (click)="register()">
+          <ion-spinner *ngIf="isLoading" name="crescent" class="mr-2"></ion-spinner>
+          <span *ngIf="!isLoading">Daftar</span>
+          <span *ngIf="isLoading">Sedang mendaftar…</span>
+        </ion-button>
+        <div class="row signup">
+          <span>Sudah punya akun?</span>
+          <ion-button fill="clear" size="small" routerLink="/login">Masuk</ion-button>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </div>
+  <!-- Toast feedback -->
+  <ion-toast
+    [isOpen]="toastOpen"
+    [message]="toastMessage"
+    [duration]="2000"
+    position="top"
+    (didDismiss)="toastOpen=false">
+  </ion-toast>
+</ion-content>
