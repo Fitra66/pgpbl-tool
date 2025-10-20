@@ -1,0 +1,65 @@
+.popup-content {
+  text-align: center;
+
+  .popup-title {
+    font-weight: bold;
+    margin-bottom: 8px;
+    font-size: 1.1rem;
+  }
+
+  .popup-actions {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 10px;
+
+    .popup-btn,
+    button.popup-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 1.9rem; // Make icons larger
+      color: var(--ion-color-primary);
+      padding: 5px;
+      margin: 0 10px;
+      line-height: 1;
+
+      &:hover {
+        color: var(--ion-color-primary-shade);
+      }
+    }
+
+    .popup-btn-delete {
+      color: var(--ion-color-danger);
+      &:hover {
+        color: var(--ion-color-danger-shade);
+      }
+    }
+
+    .popup-btn-zoom {
+      color: var(--ion-color-success);
+      &:hover {
+        color: var(--ion-color-success-shade);
+      }
+    }
+    
+    #add-search-result-btn {
+        color: var(--ion-color-success);
+        &:hover {
+            color: var(--ion-color-success-shade);
+        }
+    }
+  }
+}
+
+// Override Leaflet's default popup padding and style
+.leaflet-popup-content-wrapper {
+  border-radius: 12px !important;
+}
+
+.leaflet-popup-content {
+  margin: 15px !important;
+  p {
+    margin: 0;
+  }
+}

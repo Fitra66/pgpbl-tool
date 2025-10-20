@@ -2,6 +2,14 @@
   <ion-toolbar>
     <ion-title>maps</ion-title>
   </ion-toolbar>
+  <ion-toolbar>
+    <ion-searchbar
+      [(ngModel)]="searchQuery"
+      (ionInput)="searchLocation($event)"
+      placeholder="Cari Lokasi..."
+      debounce="500"
+    ></ion-searchbar>
+  </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
